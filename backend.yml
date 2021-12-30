@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: webserver-rc
+  labels:
+    app: webserver
+    type: webserver
+
+spec:
+  template:
+    metadata:
+      name: webserver
+      labels:
+        app: webserver
+        type: webserver
+    spec:
+      containers:
+        - name: webserver
+          image: nginx:stable
+  replicas: 1
+  selector:
+    matchLabels:
+      type: webserver
