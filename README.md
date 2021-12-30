@@ -17,13 +17,13 @@ plugins=(
 ```
 ___
 
-# ReplicaSet || Pod/Service Scaling
+# [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/) || Pod/Service Scaling
 1. Launch ReplicaSet for multiple webserver pods
    1. kubectl create -f replicaset/replicaset.yml
 2. Scale pod count up and down
    1. kubectl replace -f replicaset/replicaset.yml || kubectl edit replicaset
 
-# Deployments || Managed Services
+# [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) || Managed Services
 1. Launch Deployment for multiple api service
    1. kubectl create -f deployments/api.yml
 2. Update deployment (replicas and images)
@@ -31,4 +31,9 @@ ___
    2. kubectl apply -f deployments/api.yml
 3. Deployment Info and Debugging 
    1. kubectl rollout status deployment
-   1. kubectl describe deployment api-deployment
+   2. kubectl describe deployment api-deployment
+
+# [Services](https://kubernetes.io/docs/concepts/services-networking/service/) 
+1. Create NodePort & ClusterIP for webserver
+   1. kubectl create -f services/webserver-service.yml
+   1. kubectl create -f services/webserver-clusterip.yml
