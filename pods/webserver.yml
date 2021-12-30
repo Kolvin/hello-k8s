@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: webserver
+  labels:
+    app: webserver
+    type: webserver
+  spec:
+    containers:
+      - name: webserver
+        image: nginx:stable
