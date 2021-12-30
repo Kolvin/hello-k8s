@@ -15,3 +15,10 @@ plugins=(
     kubectl
 )
 ```
+___
+
+# ReplicaSet || Pod/Service Scaling
+1. Launch ReplicaSet for multiple webserver pods
+   1. kubectl create -f replicaset/replicaset.yml
+2. Scale pod count up and down
+   1. kubectl replace -f replicaset/replicaset.yml || kubectl edit replicaset
